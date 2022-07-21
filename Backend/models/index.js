@@ -1,11 +1,11 @@
-const { model } = require('mongoose')
-const MissingSchema = require('./missingEntities')
-const WildSchema = require('./wildAnimals')
+const mongoose = require("mongoose")
+const MissingSchema = require("./missingEntities")
+const WildSchema = require("./wildAnimals")
 
-const MissingEntity = model('MissingEntity', MissingSchema)
-const WildAnimal = model('WildAnimal', WildSchema)
+const MissingEntity = mongoose.model("MissingEntity", MissingSchema)
+const WildAnimal = mongoose.model("WildAnimal", WildSchema)
 
 module.exports = {
   MissingEntity,
-  WildAnimal
+  WildAnimal,
 }

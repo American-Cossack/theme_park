@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
 
 const MissingEntities = new Schema(
   {
@@ -11,6 +11,6 @@ const MissingEntities = new Schema(
     isHuman: { type: Boolean, required: true },
   },
   { timestamps: true }
-);
+)
 
-module.exports = mongoose.model("Missing Things", MissingEntities);
+module.exports = MissingEntities

@@ -1,6 +1,9 @@
-const { Router } = require("express");
-const router = Router();
+const { Router } = require("express")
+const router = Router()
+const controllers = require("../controllers")
 
-router.get("/", (req, res) => res.send("This is root!"));
+router.get("/", (req, res) => res.send("This is root!"))
 
-module.exports = router;
+router.get("/animals", controllers.getAllAnimals)
+
+module.exports = router

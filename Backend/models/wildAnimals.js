@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
 
 const WildAnimal = new Schema(
   {
@@ -9,6 +9,7 @@ const WildAnimal = new Schema(
     quantity: { type: Number, required: true },
   },
   { timestamps: true }
-);
+)
 
-module.exports = mongoose.model("Animals", WildAnimal);
+// module.exports = mongoose.model('Animals', WildAnimal)
+module.exports = WildAnimal

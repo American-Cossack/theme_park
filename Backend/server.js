@@ -1,19 +1,33 @@
-const express = require("express");
-const routes = require("./routes");
-const db = require("./db");
+const express = require("express")
+const cors = require("cors")
+const logger = require("morgan")
+const routes = require("./routes")
+const db = require("./db")
 
-// require() imports and middleware here ^ ///////
+// () imports and middleware here ^ ///////
 
-const PORT = process.env.PORT || 3001;
+const { MissingEntity, WildAnimal } = require("./models")
 
-const app = express();
+const PORT = process.env.PORT || 3001
 
-app.use(express.json());
+const app = express()
+
+app.use(express.json())
 
 // app.use() middleware here ^ ///////////////////
 
-app.use("/api", routes);
+app.use("/api", routes)
 
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
+// app.get('/animals', async (req, res) => {
+//   const animals = await WildAnimal.find({})
+//   res.json(animals)
+// })
 
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+app.get("/entities", async (req, res) => {
+  const entities = await MissingEntity.find({})
+  res.json(entities)
+})
+
+db.on("error", console.error.bind(console, "MongoDB connection error:"))
+
+app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
