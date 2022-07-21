@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 const Header = (props) => {
   return (
-    <header>
+    <header className="header">
       <nav>
-        <Link to='/'>home</Link>
+        <Link className="home" to='/'><span>Home</span></Link>
       </nav>
     </header>
   )
