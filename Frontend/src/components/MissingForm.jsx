@@ -8,7 +8,7 @@ const MissingForm = (props) => {
       placeholder="Search"
       onChange={props.onChange}
     ></input>
-     <button type="submit"></button>
+     <button className="submit" type="submit"> Submit</button>
         </form>
     )
     }
