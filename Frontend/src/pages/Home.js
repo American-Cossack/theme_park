@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import AnimalCard from './components/AnimalCard'
-import EntityCard from './components/EntityCard'
-import MissingForm from './components/MissingForm'
+import AnimalCard from '../components/AnimalCard'
+import EntityCard from '../components/EntityCard'
+import MissingForm from '../components/MissingForm'
 import EntityDetails from './EntityDetails'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -15,11 +15,11 @@ const Home = () => {
 
   useEffect(() => {
     const getMissingEntities = async () => {
-      const res = await axios.get(`${BASE_URL}/`)
+      const res = await axios.get(`${BASE_URL}`)
       console.log(res)
       setMissingEntities(res.data)
     }
-    getMissingEntities
+    getMissingEntities()
   }, [])
 
   const handleInput = (event) => {
@@ -29,11 +29,7 @@ const Home = () => {
   return (
     <div>
       <div className="inputs">
-        <MissingForm
-          onSubmit={handleSearch}
-          value={searchQuery}
-          onChange={handleChange}
-        />
+        <MissingForm onSubmit={''} value={''} onChange={''} />
       </div>
       <div className="Entities">
         <h2>Park Denizens</h2>
@@ -42,7 +38,7 @@ const Home = () => {
             <div>
               <EntityCard
                 onClick={() => {
-                  navigate(`/view/games/${result.id}`)
+                  navigate(`/${result.id}`)
                 }}
                 image={result.image_background}
                 name={result.name}
@@ -58,3 +54,5 @@ const Home = () => {
     </div>
   )
 }
+
+export default Home
