@@ -52,10 +52,28 @@ const main = async () => {
       isHuman: "false",
     },
     {
-      name: "Rexbo",
+      name: "Lasagna",
       Age: "7 years old",
       Description: "A fat, orange, and lazy cat",
       timeMissing: "2 weeks",
+      image: "",
+      isHuman: "false",
+    },
+    {
+      name: "Rexbo",
+      Age: "4 years old",
+      Description:
+        "A good boy, even his brief absence has saddened many at the park. Rumored to serve X AE A-12, it's possible some deal with him might free Rexbo.",
+      timeMissing: "1 week",
+      image: "",
+      isHuman: "false",
+    },
+    {
+      name: "Timothy",
+      Age: "???",
+      Description:
+        "Brown and long, it is little surprise that this critter escaped into the theme park. His owner was last seen chasing after him as the ferret bolted into a food stand.",
+      timeMissing: "90 seconds",
       image: "",
       isHuman: "false",
     },
