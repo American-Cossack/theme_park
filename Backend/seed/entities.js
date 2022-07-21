@@ -8,7 +8,7 @@ const main = async () => {
   const entities = [{}, {}];
 
   await MissingEntities.insertMany(entities);
-  console.log("Created some plants!");
+  console.log("Created some entities!");
 };
 const run = async () => {
   await main();
