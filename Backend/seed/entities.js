@@ -1,8 +1,8 @@
-const db = require("../db");
-const MissingEntities = require("../models/missingEntities");
+const db = require("../db")
+const { MissingEntity } = require("../models")
 
 // Connect to the database
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.on("error", console.error.bind(console, "MongoDB connection error:"))
 
 const main = async () => {
   const entities = [
@@ -77,14 +77,14 @@ const main = async () => {
       image: "",
       isHuman: "false",
     },
-  ];
+  ]
 
-  await MissingEntities.insertMany(entities);
-  console.log("Created some entities!");
-};
+  await MissingEntity.insertMany(entities)
+  console.log("Created some entities!")
+}
 const run = async () => {
-  await main();
-  db.close();
-};
+  await main()
+  db.close()
+}
 
-run();
+run()
