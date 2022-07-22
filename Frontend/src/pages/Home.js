@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     const getMissingEntities = async () => {
-      const res = await axios.get(`${BASE_URL}`)
+      const res = await axios.get(`${BASE_URL}/animals`)
       console.log(res)
       setMissingEntities(res.data)
     }
