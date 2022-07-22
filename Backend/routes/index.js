@@ -9,4 +9,5 @@ router.get("/animals", controllers.getAllAnimals)
 router.get("/entities", controllers.getAllMissing)
 router.get("/:id", controllers.getEntityById)
 router.get("/animal/:id", controllers.getAnimalById)
+router.post("/new", controllers.createMissingEntity)
 module.exports = router

@@ -38,9 +38,22 @@ const getAnimalById = async (req, res) => {
   }
 }
 
+const createMissingEntity = async (req, res) => {
+  try {
+    const missingEntities = await new MissingEntity(req.body)
+    await missingEntities.save()
+    return res.status(201).json({
+      missingEntities,
+    })
+  } catch (error) {
+    return res.status(500).json(error.message)
+  }
+}
+
 module.exports = {
   getAllMissing,
   getAllAnimals,
   getEntityById,
   getAnimalById,
+  createMissingEntity,
 }
