@@ -125,6 +125,8 @@ grid-template-columns: repeat(4, 1fr);
 }
 
 .details-card {
+  background-color:#2c4a74;
   text-align: center;
+  color: white;
 
 }
