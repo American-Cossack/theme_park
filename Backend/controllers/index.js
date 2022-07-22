@@ -1,14 +1,11 @@
-const { WildAnimal, MissingEntity } = require("../models/")
+const { WildAnimal, MissingEntity } = require('../models/')
 
-const createAnimal = async (req, res) => {
+const getAllMissing = async (req, res) => {
   try {
-    const wildAnimal = await new WildAnimal(req.body)
-    await wildAnimal.save()
-    return res.status(201).json({
-      wildAnimal,
-    })
+    const missing = await MissingEntity.find({})
+    res.json(missing)
   } catch (error) {
-    return res.status(500).json({ error: error.message })
+    return res.status(500).send(error.message)
   }
 }
 
@@ -28,14 +25,14 @@ const getAnimalById = async (req, res) => {
     if (wildAnimal) {
       return res.status(200).json({ plant })
     }
-    return res.status(404).send("Animal with the specified ID does not exists")
+    return res.status(404).send('Animal with the specified ID does not exists')
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
 
 module.exports = {
-  createAnimal,
+  getAllMissing,
   getAllAnimals,
-  getAnimalById,
+  getAnimalById
 }
