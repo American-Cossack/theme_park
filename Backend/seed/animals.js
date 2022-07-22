@@ -10,28 +10,26 @@ const main = async () => {
       name: "Racoon",
       diet: "trash and other assorted leftovers",
       quantity: "23",
-      image:
-        "https://www.flickr.com/photos/196109233@N07/52231643006/in/dateposted-public/",
+      image: "https://live.staticflickr.com/65535/52231643006_172aca1788_c.jpg",
     },
     {
       name: "Possum",
       diet: "funnel cakes",
       quantity: "13",
-      image:
-        "https://www.flickr.com/photos/196109233@N07/52231649018/in/dateposted-public/",
+      image: "https://live.staticflickr.com/65535/52231649018_c325438fcc_b.jpg",
     },
     {
       name: "Bats",
       diet: "the blood of children",
       quantity: "666",
-      image: " ",
+      image: "https://www.nickgowman.com/wp-content/uploads/cartoon-bat.jpg",
     },
     {
       name: "Snake",
       diet: "other missing animals",
       quantity: "1",
       image:
-        "https://www.flickr.com/photos/196109233@N07/52230645607/in/dateposted-public/",
+        "https://i0.wp.com/www.currentschoolnews.com/wp-content/uploads/2022/02/Cobra-With-A-Top-Hat.jpg?resize=600%2C600&ssl=1",
     },
   ]
 

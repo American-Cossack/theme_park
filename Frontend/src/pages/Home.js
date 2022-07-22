@@ -53,7 +53,7 @@ const Home = () => {
                 }}
                 image={result.image}
                 name={result.name}
-                age={result.rating}
+                age={result.age}
                 description={result.description}
                 timeMissing={result.timeMissing}
                 isHuman={result.isHuman}
@@ -63,13 +63,13 @@ const Home = () => {
         </section>
       </div>
       <div className="animals">
-        <h2 className="animal-title">Animals</h2>
+        <h2 className="animal-title">Wild Animals</h2>
         <section className="animal-grid">
           {animals.map((result) => (
             <div>
               <AnimalCard
                 onClick={() => {
-                  navigate(`/${result.id}`)
+                  navigate(`/${result._id}`)
                 }}
                 image={result.image}
                 name={result.name}
