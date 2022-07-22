@@ -18,14 +18,11 @@ const getAllAnimals = async (req, res) => {
   }
 }
 
-const getAnimalById = async (req, res) => {
+const getEntityById = async (req, res) => {
   try {
     const { id } = req.params
-    const wildAnimal = await WildAnimal.findById(id)
-    if (wildAnimal) {
-      return res.status(200).json({ plant })
-    }
-    return res.status(404).send('Animal with the specified ID does not exists')
+    const selectedEntity = await MissingEntity.findById(id)
+    return res.json({ selectedEntity })
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -34,5 +31,5 @@ const getAnimalById = async (req, res) => {
 module.exports = {
   getAllMissing,
   getAllAnimals,
-  getAnimalById
+  getEntityById
 }
