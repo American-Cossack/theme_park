@@ -16,13 +16,16 @@ font-weight: bold;
 
 .title {
   text-align: center;
+  margin-bottom: 150px;
 }
 
 .missing-title {
   text-align: center;
+  margin-bottom: 70px;
 }
 .animal-title {
   text-align: center;
+  margin-bottom: 70px;
 }
 
 .body {
@@ -31,6 +34,7 @@ font-weight: bold;
 
 .missing-form {
   text-align: center;
+  margin-bottom: 150px;
 }
 
 .submit {
@@ -38,4 +42,35 @@ font-weight: bold;
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+
+.animalCard {
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  border: solid black 1px;
+}
+
+.animal-grid{
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.entityCard {
+  width: 300px;
+  height: 600px;
+  text-align: center;
+  border: solid black 1px;
+  margin-bottom: 100px;
+}
+.entity-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+position: relative;
+left: 90px;
+  justify-content: space-evenly;
+
+
+  
 }

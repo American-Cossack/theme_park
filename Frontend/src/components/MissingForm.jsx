@@ -1,5 +1,7 @@
 const MissingForm = (props) => {
     return (
+      <div> 
+        <h2>Missing Form</h2>
         <form onSubmit={props.getMissingEntities}>
     <input
       type="text"
@@ -38,6 +40,8 @@ const MissingForm = (props) => {
     <br></br>
      <button className="submit" type="submit"> Submit</button>
         </form>
+      </div>
+        
     )
     }
     export default MissingForm
