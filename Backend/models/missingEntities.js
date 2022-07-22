@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const MissingEntities = new Schema(
@@ -8,7 +8,7 @@ const MissingEntities = new Schema(
     age: { type: String, required: true },
     timeMissing: { type: String, required: true },
     image: { type: String, required: false },
-    isHuman: { type: Boolean, required: true }
+    isHuman: { type: String, required: true },
   },
   { timestamps: true }
 )

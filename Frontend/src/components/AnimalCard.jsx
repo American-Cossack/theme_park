@@ -2,7 +2,7 @@ const AnimalCard = (props) => {
     return (
       <div className="animalCard" onClick={props.onClick}>
         <div className="img-wrapper">
-          <img src={props.image} alt={''} />
+          <img className="img" src={props.image} alt={''} />
         </div>
         <div className="info-wrapper flex-col">
           <h3>Name: {props.name}</h3>

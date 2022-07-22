@@ -1,4 +1,4 @@
-const { WildAnimal, MissingEntity } = require('../models/')
+const { WildAnimal, MissingEntity } = require("../models/")
 
 const getAllMissing = async (req, res) => {
   try {
@@ -28,8 +28,19 @@ const getEntityById = async (req, res) => {
   }
 }
 
+const getAnimalById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const selectedAnimal = await WildAnimal.findById(id)
+    return res.json({ selectedAnimal })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getAllMissing,
   getAllAnimals,
-  getEntityById
+  getEntityById,
+  getAnimalById,
 }

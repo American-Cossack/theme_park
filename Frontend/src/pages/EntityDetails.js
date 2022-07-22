@@ -1,35 +1,44 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import axios from "axios"
 
-const EntityDetails = (props) => {
-  const [entityDetails, setEntityDetails] = useState(null)
-  const [selectedEntity, setSelectedEntity] = useState(null)
+const EntityDetails = () => {
+  const [entityDetails, setEntityDetails] = useState("")
+  const [selectedEntity, setSelectedEntity] = useState("")
 
-  const BASE_URL = 'http://localhost:3001/api'
+  const BASE_URL = "http://localhost:3001/api"
 
-  let { entityId } = useParams() //this keeps coming in as undefined...
-  console.log(entityId)
+  const { entityId } = useParams()
+
   useEffect(() => {
     const getEntityDetails = async () => {
-      let res = await axios.get(`${BASE_URL}/${entityId}`)
-      setEntityDetails(res.data)
-      console.log(entityId)
+      await axios.get(`${BASE_URL}/${entityId}`).then((res) => {
+        setEntityDetails(res.data.selectedEntity)
+        // setSelectedEntity(res.data.selectedEntity)
+        console.log(res.data.selectedEntity)
+      })
     }
     getEntityDetails()
   }, [])
 
   return (
-    <div className="entity-content">
-      <section className="image-container">
-        <div></div>
-      </section>
-      <section className="details">
-        <div className="flex-row space"></div>
-        <div>
-          <h3></h3>
-        </div>
-      </section>
+    <div className="details-card">
+      <div className="img-wrapper">
+        <img
+          className="img-detail"
+          src={entityDetails.name != null ? entityDetails.image : ""}
+          alt={"entityDetails.name"}
+        />
+      </div>
+      <div className="info-wrapper flex-col">
+        <h3> {entityDetails.name != null ? entityDetails.name : ""}</h3>
+        <p>Age: {entityDetails.name != null ? entityDetails.age : ""}</p>
+        <p>
+          Time Missing:
+          {entityDetails.name != null ? entityDetails.timeMissing : ""}
+        </p>
+        <p>{entityDetails.name != null ? entityDetails.description : ""}</p>
+      </div>
     </div>
   )
 }
